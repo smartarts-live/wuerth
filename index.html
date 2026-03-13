@@ -1,1 +1,354 @@
-<html></html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bewerbung Constantin Paul - Adolf Würth GmbH & Co. KG</title>
+    <style>
+        /* --- GRUNDLAGEN --- */
+        * { box-sizing: border-box; }
+        body { margin: 0; padding: 0; background-color: #555555; font-family: 'Calibri', Arial, Helvetica, sans-serif; color: #004d55; -webkit-font-smoothing: antialiased; }
+        .page { width: 210mm; height: 297mm; background-color: #ffffff; margin: 40px auto; box-shadow: 0 0 15px rgba(0,0,0,0.5); position: relative; overflow: hidden; display: flex; flex-direction: column; }
+        .header { background-color: #F9F8F6; color: #886E4C; padding: 25px 40px; border-bottom: 3px solid #886E4C; flex-shrink: 0; }
+        .header-name { font-size: 22px; letter-spacing: 1px; text-transform: uppercase; font-weight:bold; color: #886E4C; }
+        .header-text { font-size: 13px; line-height: 1.5; color: #886E4C; }
+        .header-text a { color: #886E4C; text-decoration: none; border-bottom: 1px solid #886E4C; }
+        .footer { background-color: #F9F8F6; color: #886E4C; padding: 15px 40px; font-size: 11px; text-align: center; border-top: 1px solid #886E4C; margin-top: auto; flex-shrink: 0; }
+        .content { padding: 30px 40px 10px 40px; flex-grow: 1; }
+        h1 { font-size: 24px; margin: 0 0 15px 0; font-weight: normal; text-transform: uppercase; color: #004d55; }
+        h2 { font-size: 15px; font-weight: bold; margin: 15px 0; border-bottom: 2px solid #886E4C; padding-bottom: 5px; text-transform: uppercase; color: #004d55; }
+        h3 { font-size: 15px; font-weight: bold; margin: 0 0 2px 0; color: #004d55; }
+        p, li, td { font-size: 14px; line-height: 1.45; color: #004d55; }
+        a { color: #004d55; text-decoration: none; }
+        ul { margin: 4px 0 12px 0; padding-left: 18px; }
+        .letter-recipient { font-size: 14px; margin-bottom: 40px; line-height: 1.4; }
+        .letter-date { text-align: right; margin-bottom: 20px; font-size: 14px; }
+        .letter-subject { font-weight: bold; font-size: 16px; margin-bottom: 20px; color: #004d55; }
+        .letter-body p { margin-bottom: 12px; text-align: justify; }
+        .cv-date { width: 135px; vertical-align: top; font-weight: bold; padding-right: 15px; padding-bottom: 15px; }
+        .cv-desc { vertical-align: top; padding-bottom: 15px; }
+        .sub-job { font-style: italic; font-size: 13px; margin-bottom: 6px; display: block; color: #555; }
+        .skill-title { font-weight: bold; display: block; margin-bottom: 4px; text-decoration: underline; text-decoration-color: #ddd; }
+        .profile-box-combined { display: flex; align-items: stretch; background-color: #F9F8F6; border-left: 4px solid #886E4C; margin-bottom: 25px; overflow: hidden; }
+        .profile-text-part { flex: 1; padding: 20px; font-style: italic; font-size: 14.5px; line-height: 1.5; display: flex; align-items: center; }
+        .profile-photo-part { width: 180px; flex-shrink: 0; }
+        .profile-photo-part img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .dashboard-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 50px; }
+        .stack-container { position: relative; width: 100%; height: 350px; display: flex; justify-content: center; align-items: center; cursor: pointer; }
+        .doc-card { width: 170px; height: 240px; background: white; border: 1px solid #ddd; position: absolute; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: all 0.9s ease-out; display: flex; flex-direction: column; overflow: hidden; border-radius: 2px; }
+        .cover-card { align-items: center; justify-content: center; text-align: center; padding: 10px; background: #fff; }
+        .cover-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; background: #886E4C; }
+        .doc-title { font-size: 13px; font-weight: bold; margin-top: 10px; color: #004d55; text-transform: uppercase; }
+        .doc-icon { font-size: 35px; color: #886E4C; margin-bottom: 5px; }
+        .preview-header { height: 40px; display: flex; align-items: center; padding: 0 10px; font-size: 10px; font-weight: bold; color: white; text-transform: uppercase; letter-spacing: 1px;}
+        .preview-body { padding: 15px 10px; flex-grow: 1; }
+        .p-title { font-size: 11px; font-weight: bold; color: #333; margin-bottom: 8px; border-bottom: 1px solid #eee; padding-bottom: 4px;}
+        .p-line { height: 4px; background: #eee; margin-bottom: 6px; border-radius: 2px; }
+        .p-line.short { width: 60%; }
+        .p-line.medium { width: 85%; }
+        .stack-left .card-1 { z-index: 4; transform: rotate(-2deg); } .stack-left .card-2 { z-index: 3; transform: rotate(1deg) translate(2px, 2px); } .stack-left .card-3 { z-index: 2; transform: rotate(-1deg) translate(4px, 4px); } .stack-left .card-4 { z-index: 1; transform: rotate(2deg) translate(6px, 6px); }
+        .stack-left:hover .card-1 { transform: translate(-40px, -30px) rotate(-10deg); z-index: 1; } .stack-left:hover .card-2 { transform: translate(30px, 10px) rotate(0deg); z-index: 2; } .stack-left:hover .card-3 { transform: translate(100px, 50px) rotate(10deg); z-index: 3; } .stack-left:hover .card-4 { transform: translate(170px, 90px) rotate(20deg) scale(1.05); z-index: 4; }
+        .stack-right .card-1 { z-index: 4; transform: rotate(2deg); } .stack-right .card-2 { z-index: 3; transform: rotate(-1deg) translate(-2px, 2px); } .stack-right .card-3 { z-index: 2; transform: rotate(1deg) translate(-4px, 4px); } .stack-right .card-4 { z-index: 1; transform: rotate(-2deg) translate(-6px, 6px); }
+        .stack-right:hover .card-1 { transform: translate(40px, -30px) rotate(10deg); z-index: 1; } .stack-right:hover .card-2 { transform: translate(-30px, 10px) rotate(0deg); z-index: 2; } .stack-right:hover .card-3 { transform: translate(-100px, 50px) rotate(-10deg); z-index: 3; } .stack-right:hover .card-4 { transform: translate(-170px, 90px) rotate(-20deg) scale(1.05); z-index: 4; }
+        .stack-label { position: absolute; bottom: 0; font-weight: bold; color: #004d55; text-align: center; background: #F9F8F6; padding: 10px 25px; border-radius: 20px; border: 1px solid #886E4C; z-index: 10; pointer-events: none; }
+        @media print { body { background-color: #ffffff; margin: 0; } .page { width: 210mm; height: 297mm; margin: 0; box-shadow: none; page-break-after: always; break-after: page; } #digital-dashboard { display: none !important; } }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <div class="header">
+            <table width="100%">
+                <tr>
+                    <td valign="middle">
+                        <span class="header-name">Constantin Paul</span><br><br>
+                        <div class="header-text">
+                            Am Forst 6 &bull; 15526 Bad Saarow<br>
+                            <a href="mailto:constantin.paul@gmail.com">Constantin.Paul@gmail.com</a><br>
+                            0152 542 758 24
+                        </div>
+                    </td>
+                    <td align="right" valign="top">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&color=886E4C&bgcolor=F9F8F6&data=BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3APaul%3BConstantin%0AFN%3AConstantin+Paul%0ATEL%3BTYPE%3DCELL%3A015254275824%0AEMAIL%3Aconstantin.paul%40gmail.com%0AADR%3A%3B%3BAm+Forst+6%3BBad+Saarow%3B%3B15526%3BGermany%0AEND%3AVCARD" 
+                             alt="vCard" width="85" style="display:block; border: none;">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="content">
+            <div class="letter-recipient">
+                <strong>Adolf Würth GmbH & Co. KG</strong><br>
+                Reinhold-Würth-Straße 12-17<br>
+                74653 Künzelsau-Gaisbach
+            </div>
+
+            <div class="letter-date">Bad Saarow, 13. März 2026</div>
+
+            <div class="letter-subject">
+                Bewerbung als Vertriebsmitarbeiter / Sales Manager im Außendienst (m/w/d)<br>
+            </div>
+
+            <div class="letter-body">
+                <p>Sehr geehrte Damen und Herren,</p>
+                <p>in meiner bisherigen beruflichen Laufbahn gab es stets eine Konstante: Ich identifiziere ineffiziente Abläufe und implementiere pragmatische Lösungen, die den Anwendern sofort spürbar den Arbeitsalltag erleichtern. Genau dieser Mehrwert spiegelt sich in Ihren ORSY-Systemen und digitalen Services wider. Handwerksbetriebe wollen sich auf ihr Gewerk konzentrieren, nicht auf die Materialbeschaffung. Als Ihr neuer Vertriebsmitarbeiter sorge ich vor Ort dafür, dass sie exakt das tun können.</p>
+                <p>Durch meine mehrjährige Tätigkeit bei der Bonava Deutschland GmbH spreche ich die Sprache der Baustelle. Ich habe Bau- und Projektleiter nicht nur kaufmännisch begleitet, sondern sie aktiv in neuen, digitalen Mangelmanagementsystemen geschult. Daher weiß ich genau, wie man pragmatische "Macher" auf Augenhöhe von digitalen Prozessen überzeugt – authentisch und mit klarem Fokus auf den betrieblichen Nutzen.</p>
+                <p>Darüber hinaus bringe ich aus über einem Jahrzehnt in der gehobenen Hotellerie und im Clubmanagement eine tief verankerte Vertriebs- und Dienstleistungs-DNA mit. Ob als erster Ansprechpartner für 1.500 Mitglieder im Golf Club oder in der strategischen Leitung ganzer Resorts: Der Aufbau langfristiger, vertrauensvoller Kundenbeziehungen und das systematische Entwickeln von Potenzialen sind mein tägliches Handwerkszeug. Komplexe Projekte, wie die eigenständige Evaluierung und Einführung einer digitalen Warenwirtschaft, gehe ich dabei stets analytisch und zielstrebig an.</p>
+                <p>Die Kombination aus empathischer Beratung vor Ort und digitaler Effizienz im CRM-System ist für mich kein Widerspruch, sondern der Schlüssel zum modernen B2B-Vertrieb. Gerne überzeuge ich Sie in einem persönlichen Gespräch von meiner Hands-on-Mentalität.</p>
+                <p>Mit freundlichen Grüßen</p>
+                <p>Constantin Paul</p>
+            </div>
+            
+            <div style="margin-top:40px; font-size:13px; font-weight:bold;">
+                <a href="https://smartarts-live.github.io/wuerth/" target="_blank" style="color:#886E4C; text-decoration:none; transition: opacity 0.3s;" onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'">
+                    &#10148; Anlagen: Lebenslauf, Zeugnisse & Zertifikate
+                </a>
+            </div>
+        </div>
+        <div class="footer">Constantin Paul &bull; Seite 1 von 3</div>
+    </div>
+
+    <div class="page">
+        <div class="header">
+            <table width="100%">
+                <tr>
+                    <td valign="middle">
+                        <span class="header-name">Constantin Paul</span><br><br>
+                        <span class="header-text">Lebenslauf</span>
+                    </td>
+                    <td align="right" valign="top">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&color=886E4C&bgcolor=F9F8F6&data=BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3APaul%3BConstantin%0AFN%3AConstantin+Paul%0ATEL%3BTYPE%3DCELL%3A015254275824%0AEMAIL%3Aconstantin.paul%40gmail.com%0AEND%3AVCARD" alt="vCard" width="85" style="display:block; border: none;">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="content">
+            <h1>Lebenslauf</h1>
+
+            <div class="profile-box-combined">
+                <div class="profile-text-part">
+                    "Als hybrider 'Macher' verbinde ich operative Exzellenz mit digitaler Prozessoptimierung, um Kunden im Arbeitsalltag spürbar zu entlasten. Mit fundierter Erfahrung aus der Baubranche und einer stark ausgeprägten Dienstleistungs-DNA baue ich langfristige Beziehungen auf Augenhöhe auf. Mein Ziel ist es, durch empathische Beratung und smarte Systemlösungen den Vertriebserfolg im Handwerksumfeld nachhaltig zu steigern."
+                </div>
+                <div class="profile-photo-part">
+                    <img src="assets/profilbild.jpg" alt="Constantin Paul">
+                </div>
+            </div>
+
+            <h2>Beruflicher Werdegang</h2>
+            <table style="width:100%; border-collapse:collapse;">
+                <tr>
+                    <td class="cv-date">02/2024 – 07/2025</td>
+                    <td class="cv-desc">
+                        <h3>Operations Manager</h3>
+                        <span class="sub-job">Golf Club Bad Saarow (Managed by UGOLF)</span>
+                        <ul>
+                            <li><strong>Gesamtverantwortung:</strong> Operative Leitung der Golfanlagen, des Clubhauses und der Shopsysteme.</li>
+                            <li><strong>Digitale Transformation:</strong> Eigenständige Evaluierung und Einführung einer digitalen Warenwirtschaft sowie einer App zur Dienstplanung.</li>
+                            <li><strong>Prozessoptimierung:</strong> Digitalisierung des Vertrags- und Rechnungswesens.</li>
+                            <li><strong>Analyse:</strong> Erstellung präziser Umsatzanalysen und Reportings für die Geschäftsführung.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="cv-date">02/2021 – 01/2024</td>
+                    <td class="cv-desc">
+                        <h3>Sachbearbeiter QS & Finance</h3>
+                        <span class="sub-job">Bonava Deutschland GmbH, Fürstenwalde</span>
+                        <ul>
+                            <li><strong>Schnittstelle:</strong> Bindeglied zwischen Bauleitung, IT und Finanzabteilung.</li>
+                            <li><strong>Training:</strong> Schulung von Bauleitern in Software-Tools und digitalen Bauakten.</li>
+                            <li><strong>Entwicklung:</strong> Konzeption automatisierbarer Anzeigen für Behörden und Optimierung von ERP-Schnittstellen (Front-End).</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="cv-date">08/2017 – 08/2020</td>
+                    <td class="cv-desc">
+                        <h3>Resident Manager (Stellv. Hoteldirektor)</h3>
+                        <span class="sub-job">aja Resort Bad Saarow</span>
+                        <ul>
+                            <li><strong>Strategie:</strong> Verantwortung für Budgetierung, Forecasting und Reporting.</li>
+                            <li><strong>Leadership:</strong> Führung und Weiterentwicklung der Abteilungsleiter.</li>
+                            <li><strong>Quality:</strong> Sicherstellung der Brand Standards & Beschwerdemanagement.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="cv-date">08/2015 – 07/2017</td>
+                    <td class="cv-desc">
+                        <h3>Manager Logis</h3>
+                        <span class="sub-job">aja Resort Bad Saarow</span>
+                        <ul>
+                            <li>Leitung Front Office & Housekeeping (30+ Mitarbeitende).</li>
+                            <li>Optimierung Check-in/Check-out Prozesse via PMS (Protel).</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="footer">Constantin Paul &bull; Seite 2 von 3</div>
+    </div>
+
+    <div class="page">
+        <div class="header">
+            <table width="100%">
+                <tr>
+                    <td valign="middle">
+                        <span class="header-name">Constantin Paul</span><br><br>
+                        <span class="header-text">Fortsetzung Lebenslauf</span>
+                    </td>
+                    <td align="right" valign="top">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&color=886E4C&bgcolor=F9F8F6&data=BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3APaul%3BConstantin%0AFN%3AConstantin+Paul%0ATEL%3BTYPE%3DCELL%3A015254275824%0AEMAIL%3Aconstantin.paul%40gmail.com%0AEND%3AVCARD" alt="vCard" width="85" style="display:block; border: none;">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="content">
+            <h2 style="margin-top:0;">Beruflicher Werdegang (Fortsetzung)</h2>
+            <table style="width:100%; border-collapse:collapse;">
+                <tr>
+                    <td class="cv-date">05/2012 – 08/2015</td>
+                    <td class="cv-desc">
+                        <h3>Assistant Front Office Manager</h3>
+                        <span class="sub-job">The Westin Leipzig</span>
+                        <ul>
+                            <li>Operative Leitung des Empfangs im Schichtdienst & Upselling-Training.</li>
+                            <li>Gästebetreuung auf 5-Sterne-Niveau (SPG Member Betreuung).</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="cv-date">01/2007 – 04/2012</td>
+                    <td class="cv-desc">
+                        <h3>Frühere Stationen</h3>
+                        <span class="sub-job">Hotellerie & Auslandserfahrung</span>
+                        <ul style="margin-bottom:0;">
+                            <li><strong>Radisson Blu Berlin:</strong> Asst. Night Manager (Verantwortung Audit).</li>
+                            <li><strong>Scandic Potsdamer Platz:</strong> Schichtleiter Front Office.</li>
+                            <li><strong>Work & Travel Australien:</strong> Sprachvertiefung & Aushilfe.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <h2>IT-Kompetenz & Tech-Stack</h2>
+            <p style="font-style:italic; font-size:13px; margin-bottom:15px;">
+                Hybride Erfahrung: Ich übersetze Anforderungen zwischen operativer Basis und IT-Development.
+            </p>
+            <table style="width:100%; border-collapse:collapse;">
+                <tr>
+                    <td width="50%" valign="top" style="padding-right: 20px;">
+                        <span class="skill-title">Software Development & Engineering</span>
+                        <ul>
+                            <li><strong>AI Engineering:</strong> Prompt Engineering, LLM-Integration.</li>
+                            <li><strong>Web Dev:</strong> HTML5, CSS3, Grundkenntnisse TypeScript.</li>
+                            <li><strong>Datenbanken:</strong> PostgreSQL (Verwaltung, Abfragen).</li>
+                        </ul>
+                    </td>
+                    <td width="50%" valign="top">
+                        <span class="skill-title">Branchen-Software (User & Admin)</span>
+                        <ul>
+                            <li><strong>PMS / POS:</strong> Protel, Opera, Suite8, Micros.</li>
+                            <li><strong>Management:</strong> Docma MM, PC CADDIE, Fairmas.</li>
+                            <li><strong>Office & CMS:</strong> MS Office 365 (Admin), WordPress.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <h2>Ausbildung & Weiterbildung</h2>
+            <table style="width:100%; border-collapse:collapse;">
+                <tr>
+                    <td class="cv-date">2004 – 2007</td>
+                    <td class="cv-desc">
+                        <strong>Ausbildung zum Hotelfachmann</strong><br>
+                        A-ROSA Scharmützelsee, Bad Saarow<br>
+                        <span style="font-size:13px; color:#555;">Abschluss mit Belobigung für besondere Leistungen</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="cv-date">Zertifikate</td>
+                    <td class="cv-desc">
+                        <ul style="margin-top:0;">
+                            <li><strong>Lead my Team</strong> (IFH, Hamburg 2018)</li>
+                            <li><strong>Talent & Culture</strong> (a-ja Campus, 2017)</li>
+                            <li><strong>Leadership I-III</strong> (diavendo, 2014)</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+
+            <h2>Sprachen & Interessen</h2>
+            <table style="margin-top:5px; width:100%;">
+                <tr>
+                    <td width="50%" valign="top">
+                        <strong>Sprachen:</strong><br>
+                        Deutsch (Muttersprache)<br>
+                        Englisch (Verhandlungssicher)
+                    </td>
+                    <td width="50%" valign="top">
+                        <strong>Interessen:</strong><br>
+                        Neue Technologien & KI, Golfsport,<br>
+                        Prozessautomatisierung
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="footer">Constantin Paul &bull; Seite 3 von 3</div>
+    </div>
+
+    <div class="page" id="digital-dashboard" style="background-color: #f0f0f0;">
+        <div class="header">
+            <span class="header-name">Anlagen Dashboard</span>
+            <div class="header-text" style="float:right; margin-top:5px;">Digital & Interaktiv</div>
+        </div>
+        <div class="content">
+            <div style="text-align:center; margin-bottom:10px;">
+                <h1>Ihre Unterlagen</h1>
+                <p>Fahren Sie mit der Maus über die Stapel, um die Dokumente aufzufächern.<br>Ein Klick öffnet die vollständige PDF-Datei.</p>
+            </div>
+            <div class="dashboard-grid">
+                <a href="assets/zeugnisse.pdf" target="_blank" class="stack-container stack-left">
+                    <div class="doc-card card-4">
+                        <div class="preview-header" style="background:#5C8727;">UGOLF / Golf Club</div>
+                        <div class="preview-body"><div class="p-title">Arbeitszeugnis</div><div class="p-line medium"></div><div class="p-line"></div><div class="p-line short"></div></div>
+                    </div>
+                    <div class="doc-card card-3">
+                        <div class="preview-header" style="background:#00B0F0;">BONAVA</div>
+                        <div class="preview-body"><div class="p-title">Arbeitszeugnis</div><div class="p-line"></div><div class="p-line medium"></div><div class="p-line short"></div></div>
+                    </div>
+                    <div class="doc-card card-2">
+                        <div class="preview-header" style="background:#004d55;">a-ja Resorts</div>
+                        <div class="preview-body"><div class="p-title">Zeugnis</div><div class="p-line medium"></div><div class="p-line short"></div><div class="p-line"></div></div>
+                    </div>
+                    <div class="doc-card card-1 cover-card">
+                        <div class="doc-icon">&#128196;</div><div class="doc-title">Arbeits-<br>Zeugnisse</div>
+                    </div>
+                    <div class="stack-label">Arbeitszeugnisse öffnen</div>
+                </a>
+                <a href="assets/zertifikate.pdf" target="_blank" class="stack-container stack-right">
+                    <div class="doc-card card-4">
+                        <div class="preview-header" style="background:#D8232A;">diavendo</div>
+                        <div class="preview-body"><div class="p-title">Leadership I - III</div><div class="p-line short"></div><div class="p-line"></div></div>
+                    </div>
+                    <div class="doc-card card-3">
+                        <div class="preview-header" style="background:#E2007A;">a-ja Campus</div>
+                        <div class="preview-body"><div class="p-title">Talent & Culture</div><div class="p-line medium"></div><div class="p-line short"></div></div>
+                    </div>
+                    <div class="doc-card card-2">
+                        <div class="preview-header" style="background:#333333;">IFH Academy</div>
+                        <div class="preview-body"><div class="p-title">Lead my Team</div><div class="p-line"></div><div class="p-line medium"></div></div>
+                    </div>
+                    <div class="doc-card card-1 cover-card">
+                        <div class="doc-icon">&#127942;</div><div class="doc-title">Zertifikate &<br>Weiterbildung</div>
+                    </div>
+                    <div class="stack-label">Qualifikationen öffnen</div>
+                </a>
+            </div>
+        </div>
+        <div class="footer">Nur digital sichtbar. Wird beim Drucken ausgeblendet.</div>
+    </div>
+</body>
+</html><html></html>
